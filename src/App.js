@@ -1,32 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import noteImage from './res/sticky-note.png';
-import addImage from './res/add.png';
+import {noteStyle, addNoteStyle, inputStyle} from './styles.js'
 import serverData from './fakeServer.js';
-
-const noteStyle = {
-    display: 'block',
-    backgroundImage: `url(${noteImage})`,
-    backgroundSize: 'cover',
-}
-
-const addNoteStyle = {
-    textAlign: 'center',
-    backgroundImage: `url(${addImage})`,
-    backgroundSize: '30%',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    border: '0.1em solid gray',
-}
-
-const inputStyle = {
-    width: '100%',
-    padding: '0.5em 1em',
-    margin: '0.1em 0',
-    backgroundColor: 'rgba(255,255,255,0.3)',
-    border: '0.1em solid gray',
-    boxSizing: 'border-box'
-}
 
 class App extends Component {
     constructor() {
@@ -66,7 +41,7 @@ const Note = param => (
 )
 
 const NoteAdd = params => (
-    <div className="note" style={addNoteStyle}>
+    <div className="note clickable" style={addNoteStyle}>
         <span style={{ display: 'block', marginTop: '2.5em', color: 'gray', }}>you can add note here</span>
     </div>
 )
