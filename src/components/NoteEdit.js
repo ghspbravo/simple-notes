@@ -11,23 +11,27 @@ const inputStyle = {
 }
 
 export default class NoteEdit extends Component {
+
+    handleSave = () => {
+        this.props.handleSave(this.refs.titleInput.value, this.refs.textInput.value);
+    }
+
     render() {
         return (
             <div className="note">
                 <h2><input
-                    onChange={this.props.handleTitleChange}
-                    style={{...inputStyle, fontWeight: 'bold'}}
+                    ref="titleInput"
+                    style={{ ...inputStyle, fontWeight: 'bold' }}
                     type="text"
                     placeholder="title"
-                    value={this.props.note && this.props.note.title} /></h2>
+                    defaultValue={this.props.note && this.props.note.title} /></h2>
                 <div><textarea
-                    onChange={this.props.handleTextChange}
+                    ref="textInput"
                     style={{ ...inputStyle, height: '10em' }}
                     type="text"
                     placeholder="text"
-                    value={this.props.note && this.props.note.text} /></div>
-                <Button handleClickEvent={this.props.handleSave}>
-                Save</Button>
+                    defaultValue={this.props.note && this.props.note.text} /></div>
+                <Button handleClickEvent={this.handleSave}>Save</Button>
             </div>
         )
     }
