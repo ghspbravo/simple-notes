@@ -25,7 +25,7 @@ class App extends Component {
                             {
                                 this.state.fakeServer.user.notes.map(note => <Note note={note}/>)
                             }
-                            {NoteEdit()}
+                            <NoteEdit/>
                             {NoteAdd()}
                         </div>
                     </div> : <h1 style={{ position: 'absolute', top: '48%', left: '45%', }}>Loading...</h1>
