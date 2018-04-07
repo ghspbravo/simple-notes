@@ -6,6 +6,8 @@
     margin-bottom: 2em;
     padding: 0.5em 2em;
     box-sizing: border-box;
+    background-image: url('./res/sticky-note.png');
+    background-size: cover;
 }
 
 .clickable:hover {
